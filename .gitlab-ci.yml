@@ -1,0 +1,17 @@
+image: latex
+
+
+stages:
+  - build
+
+compile_job:
+  stage: build
+  tags:
+  - tex
+  - latex
+  script:
+  - pdflatex zaverecna-praca.tex # priprava bibliografie
+  - pdflatex zaverecna-praca.tex # pri pouziti krizovych referencii
+  artifacts:
+    paths:
+    - zaverecna-praca.pdf
